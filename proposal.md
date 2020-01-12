@@ -67,8 +67,9 @@ I would like to treat this as suitable for a regression analysis and predict the
 
 ### Benchmark Model
 
-To benchmark the model, I will use a naive model to generate 
-There are hundreds of participants of the competition on kaggle.com whose solutions are ranked on a leaderboard. I will use that as a benchmark and aim to finish within 10% of the top score on the leaderboard. 
+I will first try to solve the challenge with a naive linear Regression model and generate scores to compare with my real solution. This naive model will be the benchmark and the aim will be to exceed the benchmark with the real solution.
+
+Further, the final result can also be compared on the competition's leaderboard as a measure ofsuccess of the selected models. 
 
 ### Evaluation Metrics
 
@@ -82,8 +83,8 @@ The design of the project will follow the following set of steps as outlined bel
 - Data Exploration: The data from the dataset will be imported into a Pandas dataframe and various aspect of it willbe analyzed.
 - Data Preprocessing: The data needs to be cleaned up as necessary (for example, taking care of NaNs etc.,), formatted and restructured to transform any skewed features. Other scaling and normalization operations can also be performed to make the data suitable as input to the machine learning algorithm. 
 - Data Visualization: Visual representation of data using libraries like matplotlib, seaborn will be used to find correlation patterns in the data between the predictors and the target variable.
-- Model Selection: Various algorithms will be tested to figure out which model will work best for this dataset. 
-- Model Evaluation: 
-- Model Tuning: Fine tune the selected algorithm to increase performance to reduce overfitting.
+- Model Selection: The baseline analysis wil be done using a linear regression model to setup a benchmark. After doing a quick comparison of the features and performance of XGBM and LightGBM, I have picked LightGBMRegressor as the model of choice to use for this particular problem. I plan to use Convolutional Neural Networks with multiple hidden layers for training purposes.
+- Model Evaluation: Measure the alogirthm's performance against the benchmark created earlier. 
+- Model Tuning: Fine tune the selected algorithm's hyperparameters to increase performance.
 - Feature Optimization: The features of the dataset are analyzed for feature importance, feature relevance and any effects of feature selection. If optimal list of features are found, they willbe inlcuded in the final model.  
 - Testing: Test the model on testing dataset.
