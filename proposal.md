@@ -33,7 +33,15 @@ The challenge provides two main data file (train.csv and test.csv) each of which
 - type: Media type of the game or video. Possible values are: 'Game', 'Assessment', 'Activity', 'Clip'.
 - world: The section of the application the game or video belongs to. Helpful to identify the educational curriculum goals of the media. Possible values are: 'NONE' (at the app's start screen), TREETOPCITY' (Length/Height), 'MAGMAPEAK' (Capacity/Displacement), 'CRYSTALCAVES' (Weight).
 
-The dataset also contains another file **specs.csv** which gives the specification of the various event types. 
+The training set contains 11341042(~11.3M) records. It has 11 columns as shown in the figure below.
+![](assets/training_data.png)
+
+The testing set contains 1156414(1.1M) records and has 11 columns as can be seen from the image below.
+![](assets/testing_data.png)
+
+Since the testing set doesnt give the correct answers I will create a validation set and most likely use KFold cross-validation to reduce/avoid overfitting the model. 
+
+The dataset contains another file **specs.csv** which gives the specification of the various event types. 
 
 + event_id: Global unique identifier for the event type. Joins to event_id   column in events table.
 + info: Description of the event.
@@ -59,6 +67,7 @@ I would like to treat this as suitable for a regression analysis and predict the
 
 ### Benchmark Model
 
+To benchmark the model, I will use a naive model to generate 
 There are hundreds of participants of the competition on kaggle.com whose solutions are ranked on a leaderboard. I will use that as a benchmark and aim to finish within 10% of the top score on the leaderboard. 
 
 ### Evaluation Metrics
