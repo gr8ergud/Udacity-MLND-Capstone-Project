@@ -39,7 +39,7 @@ The training set contains 11341042(~11.3M) records. It has 11 columns as shown i
 The testing set contains 1156414(1.1M) records and has 11 columns as can be seen from the image below.
 ![](assets/testing_data.png)
 
-Since the testing set doesnt give the correct answers I will create a validation set and most likely use KFold cross-validation to reduce/avoid overfitting the model. 
+Since the testing set doesnt give the correct answers I will create a validation set and most likely use KFold cross-validation to to evaluate the model's fit using the generated score. 
 
 The dataset contains another file **specs.csv** which gives the specification of the various event types. 
 
