@@ -97,8 +97,11 @@ The quadratic weighted kappa score for the benchmark turned out to be 0.237 (1 i
 ## IV. Solution
 For the solution I selected teh LightGBM estimator which has a few advantages over the XGBoost and other neural network based architectures in speed, memory usage etc., 
 
-## Results
+The LightGBM model was parameterized as shown below and trained on the extracted dataset with expanded labels. 
+![](assets/lgb.png)
 
+## Results
+The result of the training resulting in higher quadratic weighted kappa scores for the model. The original kernel used a combination of LGBM, CNN, XGBoost and later combined the predictions from each model with a certain weight. Obviously my solution is much simpler in order to satisfy the course requirement and there is a lot of room for improvement. Especially the hyperparameter tuning can be applied to improve the model. 
 
 
 
