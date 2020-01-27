@@ -69,17 +69,33 @@ https://github.com/gr8ergud/Udacity-MLND-Capstone-Project/blob/master/capstone.i
 The 'build_features' method translates the raw data into trainable data by extracting relevant features. 
 ![](assets/trainable-data.png)
 
-The above step resulted in 
+I selected a notebook on teh kaggle.com website as a starting point and started making changes that I thought would be needed to get a benchmark, a solution and other analyses peformed. Some of the algorithms used in the source kernel were kept intact but I heavily modified it suit the nanodegree requirements.
+https://www.kaggle.com/braquino/convert-to-regression
 
 ### Feature Engineering
-In this section, I have searched for columns that have only '0' in the cells and removed those columns.
+To reduce or optimize teh number of features, I have searched for columns that have only '0' in the cells and removed those columns as tehy donta provide any value to the training.
+
 ![](assets/remove-columns.png)
 
-The overall trainable data resultined in more than 800 labels. All the categorical lables were already ampped an covnerted to numericals and also one-hot encoded during the feature extraction step. 
+The above action resulted in around 850 labels in the trainbale dataset. All the categorical lables were already mapped and converted to numericals and also one-hot encoded during the feature extraction step. 
+
+### Cross Validation
+For cross validation I picked the StratifiedKFold cross validation and used n_folds=5 to reduce overfitting of the model. 
+
+### Evaluation Metric
+To compare the solution's model with a benchmark, the quadratic weighted kappa score was selected. 
+![](assets/qwk-score.png)
 
 ## III. Benchmark
+I picked the Logistic Regression model to benchmark against my solution. I trained the model on the same set of data that I used for the main solution.
+The full code is available here: https://github.com/gr8ergud/Udacity-MLND-Capstone-Project/blob/master/capstone.ipynb
+
+The quadratic weighted kappa score for the benchmark turned out to be 0.237 (1 is full agreement with the ground truth). The distribution of the predicted scores for the test data is plotted in the graph below.
+![](assets/benchmark.png)
+
 
 ## IV. Solution
+For the solution I selected teh LightGBM estimator which has a few advantages over the XGBoost and other neural network based architectures in speed, memory usage etc., 
 
 ## Results
 
