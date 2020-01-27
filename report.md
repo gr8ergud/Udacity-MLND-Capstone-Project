@@ -50,6 +50,21 @@ The dataset contains another file specs.csv which gives the specification of the
 
 The dataset also includes a file train_labels.csv which demonstates how to compute the ground truth for the assessments in the training set.
 ## II. Data Analysis
+The inputs to the problem are a set of files provided by kaggle.com on its competition website.
+![](assets/input-files.PNG)
+
+These files contain data that has the following structure.
+![](assets/file-structure.png)
+
+Taking a deeper look, I notice that there are 3614 unique installation ids in the training data which have their correct target variable in the train_labels dataset. We need to train a model on the training data and then validate against the ground truth provided in the labels.
+![](assets/unique-ids.png)
+
+
+![](assets/unique-gids.png)
+From the image above we can see that the target variable 'accuracy_group is provided for each unique combination of an installation_id+game_session. It helps to know this when we are compiling data from the training_data. 
+
+
+Now lets compile some data from the training dataset.
 
 ### Data Exploration
 
