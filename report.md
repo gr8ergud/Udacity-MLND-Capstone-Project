@@ -100,13 +100,13 @@ For the solution I selected teh LightGBM estimator which has a few advantages ov
 The LightGBM model was parameterized as shown below and trained on the extracted dataset with expanded labels. 
 ![](assets/lgb.png)
 
-## Results
+## V. Results
 The result of the training resulting in higher quadratic weighted kappa scores for the model. 
 ![](assets/lgb-results.png)
 
-the model achieved a score of 0.592 which is greater than the benchmark score of 0.237. 
+the model achieved a score of **0.592** which is greater than the benchmark score of **0.237**.
 
 The original kernel used a combination of LGBM, CNN, XGBoost and later combined the predictions from each model with a certain weight. Obviously my solution is much simpler in order to satisfy the course requirement and there is a lot of room for improvement. Especially the hyperparameter tuning can be applied to improve the model. 
 
-## Conclusion
+## VI. Conclusion
 The selected problem of predicting number of attempts a child takes to answer an assessment question correctly is very interesting challenge. If we are able to predict which lessons have the most learning rate, educators can focus on improving those and also provide them a wider range of kids in the country. The LightGBM model is one of the better models models but an XGBoost or a CNN model can also be used if the hyperparameters are properly tuned. My solution achieved a score of 0.529 which ranks decently on the leaderboard of the competition on kaggle.com website.  
