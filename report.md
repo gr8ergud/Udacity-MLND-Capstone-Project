@@ -44,6 +44,9 @@ The dataset also includes a file train_labels.csv which demonstates how to compu
 
 
 ## II. Data Analysis and Exploration
+The entire project was developed and run on the kaggle platform and is available here.
+https://www.kaggle.com/gr8ergood/2019-data-science-bowl-a-possible-solution
+
 The inputs to the problem are a set of files provided by kaggle.com on its competition website.
 ![](assets/input-files.PNG)
 
@@ -95,7 +98,10 @@ The quadratic weighted kappa score for the benchmark turned out to be 0.237 (1 i
 
 
 ## IV. Solution
-For the solution I selected teh LightGBM estimator which has a few advantages over the XGBoost and other neural network based architectures in speed, memory usage etc., 
+The entire project was developed and run on the kaggle platform and is available here.
+https://www.kaggle.com/gr8ergood/2019-data-science-bowl-a-possible-solution
+
+For the solution I selected the LightGBM estimator which has a few advantages over the XGBoost and other neural network based architectures in speed, memory usage etc., 
 
 The LightGBM model was parameterized as shown below and trained on the extracted dataset with expanded labels. 
 ![](assets/lgb.png)
