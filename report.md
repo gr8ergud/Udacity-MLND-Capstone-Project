@@ -101,9 +101,10 @@ The LightGBM model was parameterized as shown below and trained on the extracted
 ![](assets/lgb.png)
 
 ## Results
-The result of the training resulting in higher quadratic weighted kappa scores for the model. The original kernel used a combination of LGBM, CNN, XGBoost and later combined the predictions from each model with a certain weight. Obviously my solution is much simpler in order to satisfy the course requirement and there is a lot of room for improvement. Especially the hyperparameter tuning can be applied to improve the model. 
+The result of the training resulting in higher quadratic weighted kappa scores for the model. 
+![](assets/lgb-results.png)
 
+the model achieved a score of 0.592 which is greater than the benchmark score of 0.237. 
 
-
-
+The original kernel used a combination of LGBM, CNN, XGBoost and later combined the predictions from each model with a certain weight. Obviously my solution is much simpler in order to satisfy the course requirement and there is a lot of room for improvement. Especially the hyperparameter tuning can be applied to improve the model. 
 
