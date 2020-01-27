@@ -36,41 +36,46 @@ The training set contains 11341042(~11.3M) records. It has 11 columns as shown i
 The testing set contains 1156414(1.1M) records and has 11 columns as can be seen from the image below.
 ![](assets/testing_data.png)
 
-
 Since the testing set doesnt give the correct answers I will create a validation set and most likely use KFold cross-validation to to evaluate the model's fit using the generated score.
 
 The dataset contains another file specs.csv which gives the specification of the various event types.
 
-    event_id: Global unique identifier for the event type. Joins to event_id column in events table.
-    info: Description of the event.
-    args: JSON formatted string of event arguments. Each argument contains:
-        name: Argument name.
-        type: Type of the argument (string, int, number, object, array).
-        info: Description of the argument.
-
 The dataset also includes a file train_labels.csv which demonstates how to compute the ground truth for the assessments in the training set.
-## II. Data Analysis
+
+
+## II. Data Analysis and Exploration
 The inputs to the problem are a set of files provided by kaggle.com on its competition website.
 ![](assets/input-files.PNG)
 
 These files contain data that has the following structure.
 ![](assets/file-structure.png)
 
-Taking a deeper look, I notice that there are 3614 unique installation ids in the training data which have their correct target variable in the train_labels dataset. We need to train a model on the training data and then validate against the ground truth provided in the labels.
 ![](assets/unique-ids.png)
 
+Taking a deeper look, I notice that there are 3614 unique installation ids in the training data which have their correct target variable in the train_labels dataset. We need to train a model on the training data and then validate against the ground truth provided in the labels.
 
 ![](assets/unique-gids.png)
-From the image above we can see that the target variable 'accuracy_group is provided for each unique combination of an installation_id+game_session. It helps to know this when we are compiling data from the training_data. 
 
+From the image above we can see that the target variable 'accuracy_group is provided for each unique combination of an installation_id+game_session. It helps to know this when we are compiling data from the training_data. 
 
 Now lets compile some data from the training dataset.
 
-### Data Exploration
-
 ### Data Preprocessing
+In the preprocess, step, I step through each game_session grouped by the installation id and collect the 'true' and 'false' attempts made by the child in each Assessment exercise. I tally them and calculate a total correct vs false and and accumulated list of attempts and scores. 
 
-### Feature Extraction
+Full code canbe accessed at the github link given below:
+https://github.com/gr8ergud/Udacity-MLND-Capstone-Project/blob/master/capstone.ipynb
+
+The 'build_features' method translates the raw data into trainable data by extracting relevant features. 
+![](assets/trainable-data.png)
+
+The above step resulted in 
+
+### Feature Engineering
+In this section, I have searched for columns that have only '0' in the cells and removed those columns.
+![](assets/remove-columns.png)
+
+The overall trainable data resultined in more than 800 labels. All the categorical lables were already ampped an covnerted to numericals and also one-hot encoded during the feature extraction step. 
 
 ## III. Benchmark
 
